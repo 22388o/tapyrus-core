@@ -10,12 +10,13 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+static const unsigned int N_TIMES_BLOCK_SIZE = 3;
 /** The maximum allowed size for a serialized block, in bytes (only for buffer size limits) */
-static const unsigned int MAX_BLOCK_SERIALIZED_SIZE = 4000000;
+static const unsigned int MAX_BLOCK_SERIALIZED_SIZE = 4000000 * N_TIMES_BLOCK_SIZE;
 /** The maximum allowed weight for a block, see BIP 141 (network rule) */
-static const unsigned int MAX_BLOCK_WEIGHT = 4000000;
+static const unsigned int MAX_BLOCK_WEIGHT = 4000000 * N_TIMES_BLOCK_SIZE;
 /** The maximum allowed number of signature check operations in a block (network rule) */
-static const int64_t MAX_BLOCK_SIGOPS_COST = 80000;
+static const int64_t MAX_BLOCK_SIGOPS_COST = 80000 * N_TIMES_BLOCK_SIZE;
 
 static const int WITNESS_SCALE_FACTOR = 4;
 
